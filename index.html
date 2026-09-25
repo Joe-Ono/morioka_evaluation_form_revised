@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>盛岡市職員 人事評価・目標設定エントリーフォーム（Web版）</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @page {
+            size: A4;
+            margin: 10mm;
+            background-color: #f8fafc;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f8fafc;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body class="py-6 px-4">
+    <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-emerald-800 to-teal-700 text-white p-6">
+            <div class="flex justify-between items-start">
+                <div>
+                    <span class="inline-block bg-emerald-600/80 text-emerald-100 text-[11px] font-semibold px-2.5 py-1 rounded-full mb-2">盛岡市職員 人事評価・目標設定システム</span>
+                    <h1 class="text-2xl font-bold tracking-tight">令和8年度 目標設定・自己評価エントリーフォーム</h1>
+                    <p class="text-xs text-emerald-100 mt-1">※KPI・個人業務目標・政策調査／業務革新・コンピテンシー統合評価シート</p>
+                </div>
+                <div class="text-right bg-emerald-900/40 p-3 rounded-xl border border-emerald-600/40 text-xs space-y-1">
+                    <div>ステータス: <span class="font-bold text-amber-300">入力・編集中</span></div>
+                    <div>配点合計: <span class="font-bold text-white">100%</span></div>
+                </div>
+            </div>
+        </div>
+
+        <form class="p-8 space-y-8 text-slate-800 text-sm">
+            <!-- 職員基本情報 ＆ 評価者設定 -->
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-200 space-y-4">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-slate-500 border-b border-slate-200 pb-2">職員情報 ＆ 評価者設定</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">所属部署</label>
+                        <input type="text" value="健康福祉部 福祉政策課" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-700" placeholder="例: 総合政策部 企画調整課">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">職員氏名</label>
+                        <input type="text" value="盛岡 太郎" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-700" placeholder="例: 盛岡 太郎">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">役職</label>
+                        <input type="text" value="主査（一般職員）" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-700" placeholder="例: 主査">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">評価者（一次・直属上司）</label>
+                        <input type="text" value="佐々木 課長" class="w-full bg-emerald-50 border border-emerald-300 rounded-lg px-3 py-2 text-xs text-slate-800 font-semibold" placeholder="例: 〇〇 課長">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1. 主要KPI系 (60%) -->
+            <div class="space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                    <h2 class="font-bold text-emerald-800 text-base flex items-center gap-2">
+                        <span class="w-7 h-7 bg-emerald-100 text-emerald-800 rounded-lg flex items-center justify-center text-xs">1</span>
+                        主要KPIに基づく達成度評価（配点合計：60% / 各20%）
+                    </h2>
+                    <span class="text-xs bg-emerald-50 text-emerald-700 font-semibold px-2.5 py-1 rounded-md border border-emerald-200">各KPI：KPI達成度 7割 ＋ アクションプラン達成度 3割</span>
+                </div>
+
+                <!-- KPI 1 -->
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/60 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-bold bg-slate-700 text-white px-2.5 py-1 rounded-md">主要KPI ①（配点：20%）</span>
+                        <span class="text-xs text-slate-500 font-medium">内訳割合：KPI達成度 70% ＋ アクションプラン 30%</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">KPI 1 タイトル・設定目標値</label>
+                            <input type="text" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" value="高齢者サロン参加者のデジタル端末利用率 40%達成">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">KPI達成基準（100%達成=1.0、最大1.2など）</label>
+                            <input type="text" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" value="対象世帯へのヒアリングおよび講習会開催数ベースで算定">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">アクションプラン実行度（チーム共通2項目 ＋ 個人オリジナル1項目）</label>
+                        <textarea rows="3" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" placeholder="【チーム共通1】公民館でのスマホ教室の月2回開催&#10;【チーム共通2】地域包括支援センターとの連携強化連絡会の実施&#10;【個人オリジナル】玉山地区の特定町内会に対する個別訪問サポートの実施">【チーム共通1】公民館でのスマホ教室の月2回開催
+【チーム共通2】地域包括支援センターとの連携強化連絡会の実施
+【個人オリジナル】玉山地区の特定町内会に対する個別訪問サポートの実施</textarea>
+                    </div>
+                    <!-- Supervisor Comment Box -->
+                    <div class="bg-amber-50/80 border border-amber-200 rounded-lg p-3 space-y-1">
+                        <div class="text-[11px] font-bold text-amber-800 flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            【上司コメント欄】KPI 1 の目標設定およびアクションプランに対する評価・助言
+                        </div>
+                        <input type="text" class="w-full bg-white border border-amber-300 rounded px-2.5 py-1.5 text-xs text-slate-700" placeholder="（上司が記入します）例：地域の実情に合わせた個別訪問の工夫が良い。数値目標の達成に向けてサポートします。">
+                    </div>
+                </div>
+
+                <!-- KPI 2 -->
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/60 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-bold bg-slate-700 text-white px-2.5 py-1 rounded-md">主要KPI ②（配点：20%）</span>
+                        <span class="text-xs text-slate-500 font-medium">内訳割合：KPI達成度 70% ＋ アクションプラン 30%</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">KPI 2 タイトル・設定目標値</label>
+                            <input type="text" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" value="高齢者見守りLINEアカウント登録者数 500名突破">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">KPI達成基準</label>
+                            <input type="text" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" value="公式アカウントの友だち追加数およびアクティブ利用率">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">アクションプラン実行度（チーム共通2項目 ＋ 個人オリジナル1項目）</label>
+                        <textarea rows="3" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" placeholder="【チーム共通1】周知チラシの全戸配布およびポスター掲示依頼&#10;【チーム共通2】イベント会場でのQRコード掲示と登録ブースの設置&#10;【個人オリジナル】老人クラブ連合会会合での直接説明会の企画・実施">【チーム共通1】周知チラシの全戸配布およびポスター掲示依頼
+【チーム共通2】イベント会場でのQRコード掲示と登録ブースの設置
+【個人オリジナル】老人クラブ連合会会合での直接説明会の企画・実施</textarea>
+                    </div>
+                    <!-- Supervisor Comment Box -->
+                    <div class="bg-amber-50/80 border border-amber-200 rounded-lg p-3 space-y-1">
+                        <div class="text-[11px] font-bold text-amber-800 flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            【上司コメント欄】KPI 2 の目標設定およびアクションプランに対する評価・助言
+                        </div>
+                        <input type="text" class="w-full bg-white border border-amber-300 rounded px-2.5 py-1.5 text-xs text-slate-700" placeholder="（上司が記入します）例：老人クラブへのアプローチは効果的。ターゲット層への訴求力を高めましょう。">
+                    </div>
+                </div>
+
+                <!-- KPI 3 -->
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/60 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-xs font-bold bg-slate-700 text-white px-2.5 py-1 rounded-md">主要KPI ③（配点：20%）</span>
+                        <span class="text-xs text-slate-500 font-medium">内訳割合：KPI達成度 70% ＋ アクションプラン 30%</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">KPI 3 タイトル・設定目標値</label>
+                            <input type="text" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" value="地域サロン・住民参加型福祉コミュニティの新規立ち上げ 3箇所">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">KPI達成基準</label>
+                            <input type="text" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" value="定期開催実績および運営規約の策定完了数">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">アクションプラン実行度（チーム共通2項目 ＋ 個人オリジナル1項目）</label>
+                        <textarea rows="3" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" placeholder="【チーム共通1】民生委員児童委員協議会との意見交換会の開催&#10;【チーム共通2】既存サロンの運営課題ヒアリングと横展開支援&#10;【個人オリジナル】南部地域での茶の間サロン立ち上げに向けた住民発起人会への参加支援">【チーム共通1】民生委員児童委員協議会との意見交換会の開催
+【チーム共通2】既存サロンの運営課題ヒアリングと横展開支援
+【個人オリジナル】南部地域での茶の間サロン立ち上げに向けた住民発起人会への参加支援</textarea>
+                    </div>
+                    <!-- Supervisor Comment Box -->
+                    <div class="bg-amber-50/80 border border-amber-200 rounded-lg p-3 space-y-1">
+                        <div class="text-[11px] font-bold text-amber-800 flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            【上司コメント欄】KPI 3 の目標設定およびアクションプランに対する評価・助言
+                        </div>
+                        <input type="text" class="w-full bg-white border border-amber-300 rounded px-2.5 py-1.5 text-xs text-slate-700" placeholder="（上司が記入します）例：住民発起人会への密着サポートを期待します。進捗適宜報告してください。">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. 業務に関する個人目標 (10%) -->
+            <div class="space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                    <h2 class="font-bold text-emerald-800 text-base flex items-center gap-2">
+                        <span class="w-7 h-7 bg-emerald-100 text-emerald-800 rounded-lg flex items-center justify-center text-xs">2</span>
+                        業務に関する個人目標（配点：10%）
+                    </h2>
+                    <span class="text-xs bg-emerald-50 text-emerald-700 font-semibold px-2.5 py-1 rounded-md border border-emerald-200">日常業務の効率化・改善目標</span>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/60 space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">個人業務目標のタイトル</label>
+                            <input type="text" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" value="福祉申請事務のデジタル化推進とペーパーレス化による処理期間20%短縮">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">達成基準・測定方法</label>
+                            <input type="text" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" value="Excelマクロ活用および申請フォーム統一による平均処理日数の削減実績">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">具体的な取り組み内容</label>
+                        <textarea rows="2" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs">既存の紙申請データを整理し、Google FormsおよびExcel管理台帳への移行を主導する。チーム内での勉強会を月1回開催し、事務ミスゼロと処理スピード向上を図る。</textarea>
+                    </div>
+                    <!-- Supervisor Comment Box -->
+                    <div class="bg-amber-50/80 border border-amber-200 rounded-lg p-3 space-y-1">
+                        <div class="text-[11px] font-bold text-amber-800 flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            【上司コメント欄】業務に関する個人目標に対する評価・助言
+                        </div>
+                        <input type="text" class="w-full bg-white border border-amber-300 rounded px-2.5 py-1.5 text-xs text-slate-700" placeholder="（上司が記入します）例：業務効率化に向けた積極的な取り組みを評価します。チームへの波及効果も期待します。">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. 政策調査・業務革新目標 (10%) ＆ 他都市出張計画 -->
+            <div class="space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                    <h2 class="font-bold text-emerald-800 text-base flex items-center gap-2">
+                        <span class="w-7 h-7 bg-emerald-100 text-emerald-800 rounded-lg flex items-center justify-center text-xs">3</span>
+                        政策調査・業務革新目標（配点：10%）
+                    </h2>
+                    <span class="text-xs bg-emerald-50 text-emerald-700 font-semibold px-2.5 py-1 rounded-md border border-emerald-200">目標達成度 ＋ 3項目アクション ＋ レポート・学び評価</span>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/60 space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">自己研鑽・調査研究テーマ設定</label>
+                            <input type="text" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" value="先進自治体（例:東京都内・他政令市）における高齢者福祉・ICTモビリティ政策の現地調査">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">調査研究目標の達成基準</label>
+                            <input type="text" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" value="現地視察の実施、担当部署との意見交換、および政策提案レポートの提出と庁内共有">
+                        </div>
+                    </div>
+
+                    <!-- 3 Action items & Report check -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">研究アクションプラン（3項目）</label>
+                            <textarea rows="3" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs">1. 先進事例に関する事前文献調査および課題抽出の完了
+2. 視察先自治体の担当者とのアポイント調整および質問事項の作成
+3. 現地視察に基づく「盛岡市政策応用プラン」のレポート執筆</textarea>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">レポート・プロセス評価の視点</label>
+                            <textarea rows="3" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs">単なる結果だけでなく、未達項目があった場合でもそこから得られた知見や、失敗要因の分析、次年度へのフィードバックプロセスを総合的に評価に反映する。</textarea>
+                        </div>
+                    </div>
+
+                    <!-- 他都市視察の出張計画プラン（旅費・宿泊費） -->
+                    <div class="bg-teal-50/60 border border-teal-200 rounded-xl p-4 space-y-3">
+                        <div class="text-xs font-bold text-teal-900 flex items-center gap-1.5">
+                            <svg class="w-4 h-4 text-teal-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                            他都市視察を伴う政策調査・業務革新プラン（出張旅費・行程の計画）
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-3 text-xs">
+                            <div>
+                                <label class="block font-semibold text-slate-600 mb-1">視察希望都市</label>
+                                <input type="text" class="w-full bg-white border border-teal-300 rounded px-2.5 py-1.5" value="東京都・神奈川県藤沢市">
+                            </div>
+                            <div>
+                                <label class="block font-semibold text-slate-600 mb-1">視察目的・ヒアリング先</label>
+                                <input type="text" class="w-full bg-white border border-teal-300 rounded px-2.5 py-1.5" value="ICT見守りサービス導入自治体の実務担当者との意見交換">
+                            </div>
+                            <div>
+                                <label class="block font-semibold text-slate-600 mb-1">出張回数・日数（往復交通費）</label>
+                                <input type="text" class="w-full bg-white border border-teal-300 rounded px-2.5 py-1.5" value="計2回（①日帰り②1泊2日 / 往復5万円×2）">
+                            </div>
+                            <div>
+                                <label class="block font-semibold text-slate-600 mb-1">宿泊費（目安：1泊1万円×回数）</label>
+                                <input type="text" class="w-full bg-white border border-teal-300 rounded px-2.5 py-1.5" value="1泊分：10,000円（合計旅費試算：110,000円）">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Supervisor Comment Box -->
+                    <div class="bg-amber-50/80 border border-amber-200 rounded-lg p-3 space-y-1">
+                        <div class="text-[11px] font-bold text-amber-800 flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                            【上司コメント欄】政策調査・業務革新目標および他都市出張計画に対する承認・評価
+                        </div>
+                        <input type="text" class="w-full bg-white border border-amber-300 rounded px-2.5 py-1.5 text-xs text-slate-700" placeholder="（上司が記入します）例：他都市視察の目的が明確であり、出張計画を承認します。有意義な調査を期待します。">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. 個人の全体能力・コンピテンシー評価 (10%) -->
+            <div class="space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                    <h2 class="font-bold text-emerald-800 text-base flex items-center gap-2">
+                        <span class="w-7 h-7 bg-emerald-100 text-emerald-800 rounded-lg flex items-center justify-center text-xs">4</span>
+                        個人の全体能力・コンピテンシー評価（配点：10%）
+                    </h2>
+                    <span class="text-xs bg-emerald-50 text-emerald-700 font-semibold px-2.5 py-1 rounded-md border border-emerald-200">基本項目（2つ）＋ 選択式3番目（通常 or チャレンジング1.5倍）</span>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Competency 1 -->
+                    <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/60 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-bold bg-slate-700 text-white px-2.5 py-1 rounded-md">重点コンピテンシー ①（基本）</span>
+                            <span class="text-[11px] font-bold text-slate-600 bg-slate-200 px-2 py-0.5 rounded">評価配点：最大 3.0点</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">選択項目</label>
+                                <select class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs">
+                                    <option value="coordination" selected>協調性・チームワーク（周囲と協力し円滑に業務を遂行する）</option>
+                                    <option value="proactive">積極性・主体性</option>
+                                    <option value="compliance">コンプライアンス・規律性</option>
+                                    <option value="execution">確実な業務遂行力</option>
+                                    <option value="improvement">改善提案力・柔軟性</option>
+                                    <option value="customer">市民目線・カスタマーサービス精神</option>
+                                </select>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">現状と具体的な取り組み・意気込み（コンピテンシー①）</label>
+                                <input type="text" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" value="日頃から他課や同僚との報連相を徹底し、福祉窓口でのスムーズな連携を意識して行動している。">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Competency 2 -->
+                    <div class="border border-slate-200 rounded-xl p-4 bg-slate-50/60 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-bold bg-slate-700 text-white px-2.5 py-1 rounded-md">重点コンピテンシー ②（基本）</span>
+                            <span class="text-[11px] font-bold text-slate-600 bg-slate-200 px-2 py-0.5 rounded">評価配点：最大 3.0点</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">選択項目</label>
+                                <select class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs">
+                                    <option value="coordination">協調性・チームワーク</option>
+                                    <option value="proactive" selected>積極性・主体性（困難な課題に対しても前向きに挑戦する）</option>
+                                    <option value="compliance">コンプライアンス・規律性</option>
+                                    <option value="execution">確実な業務遂行力</option>
+                                    <option value="improvement">改善提案力・柔軟性</option>
+                                    <option value="customer">市民目線・カスタマーサービス精神</option>
+                                </select>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold text-slate-600 mb-1">現状と具体的な取り組み・意気込み（コンピテンシー②）</label>
+                                <input type="text" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" value="新しいデジタルツールや企画の導入にあたり、自ら率先して操作方法を覚え、課内全体へ波及させている。">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Competency 3 (Flexible: Standard or Challenging with 1.5x multiplier) -->
+                    <div class="border border-indigo-200 rounded-xl p-4 bg-indigo-50/40 space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-bold bg-indigo-600 text-white px-2.5 py-1 rounded-md flex items-center gap-1.5">
+                                <svg class="w-3.5 h-3.5 text-indigo-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                重点コンピテンシー ③（選択式：一般基本 または チャレンジング目標【1.5倍加点】）
+                            </span>
+                            <span class="text-[11px] font-bold text-indigo-700 bg-indigo-100 px-2 py-0.5 rounded">評価配点：最大 3.0〜4.5点（チャレンジ選択時は1.5倍）</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <div>
+                                <label class="block text-xs font-semibold text-indigo-900 mb-1">項目選択（基本またはチャレンジ）</label>
+                                <select class="w-full bg-white border border-indigo-300 rounded-lg px-3 py-2 text-xs text-slate-700 font-medium">
+                                    <optgroup label="--- 一般的な基本コンピテンシー ---">
+                                        <option value="coordination">協調性・チームワーク</option>
+                                        <option value="proactive">積極性・主体性</option>
+                                        <option value="compliance">コンプライアンス・規律性</option>
+                                        <option value="execution">確実な業務遂行力</option>
+                                        <option value="improvement">改善提案力・柔軟性</option>
+                                        <option value="customer">市民目線・カスタマーサービス精神</option>
+                                    </optgroup>
+                                    <optgroup label="--- 特別チャレンジング目標（1.5倍加点対象） ---">
+                                        <option value="leadership" selected>【チャレンジング】チームリーダーシップの発揮（課長を補佐し若手を牽引）</option>
+                                        <option value="management">【チャレンジング】自主的マネジメント・後輩育成（プロジェクト進捗管理）</option>
+                                        <option value="strategy">【チャレンジング】政策形成チャレンジ（新規施策企画・他都市視察の応用）</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-xs font-semibold text-indigo-900 mb-1">現状と具体的な取り組み・意気込み（チャレンジング目標を選択した場合の計画）</label>
+                                <input type="text" class="w-full bg-white border border-indigo-300 rounded-lg px-3 py-2 text-xs" value="まだリーダーシップに課題はあるが、チーム内でのプロジェクト推進において課長を補佐し、若手職員のサポート役として牽引力を発揮したい。">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. 予備調整枠・チーム貢献度 (10%) ＆ 優先順位設定 -->
+            <div class="space-y-6">
+                <div class="flex items-center justify-between border-b border-slate-200 pb-2">
+                    <h2 class="font-bold text-emerald-800 text-base flex items-center gap-2">
+                        <span class="w-7 h-7 bg-emerald-100 text-emerald-800 rounded-lg flex items-center justify-center text-xs">5</span>
+                        予備調整枠・チーム貢献度等（配点：10%）
+                    </h2>
+                    <span class="text-xs bg-emerald-50 text-emerald-700 font-semibold px-2.5 py-1 rounded-md border border-emerald-200">ボランティア・資格取得・チーム貢献の優先順位設定</span>
+                </div>
+
+                <div class="border border-slate-200 rounded-xl p-5 bg-slate-50/60 space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">第一優先：社会貢献・ボランティア活動</label>
+                            <input type="text" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" value="地域イベント（例：Hiraizumi Jazz Festival等）や市内のボランティア活動への積極参加">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-700 mb-1">第二優先：資格取得・自己啓発</label>
+                            <input type="text" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" value="中小企業診断士、ITパスポート、福祉関連専門資格の取得に向けた学習と挑戦">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">予備調整枠（チーム貢献・上司との協議により決定する特別項目）</label>
+                        <input type="text" class="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs" value="課内の急な業務繁忙への柔軟な対応、全庁的プロジェクトチームへの参画など、上司と相談のうえ決定">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit / Action Footer -->
+            <div class="pt-4 border-t border-slate-200 flex items-center justify-between">
+                <div class="text-xs text-slate-500">
+                    ※すべての項目を入力後、上司との面談を経て正式に提出・登録されます。
+                </div>
+                <div class="flex gap-3">
+                    <button type="button" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs rounded-lg transition-colors">下書き保存</button>
+                    <button type="button" class="px-6 py-2 bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs rounded-lg shadow-md transition-colors">上司へ確認・提出する</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
